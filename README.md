@@ -12,7 +12,7 @@ If you use NPM, `npm install tricontours`. Otherwise, download the [latest relea
 <script src="https://unpkg.com/d3-array@2"></script>
 <script src="https://unpkg.com/d3-scale@3"></script>
 <script src="https://unpkg.com/d3-delaunay@5"></script>
-<script src="https://unpkg.com/tricontours@0.0.3"></script>
+<script src="https://unpkg.com/tricontours@0.0.4"></script>
 <script>
 
 const tri = tricontours.tricontours();

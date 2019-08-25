@@ -1,6 +1,6 @@
 {
   "name": "tricontours",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create contours from non-gridded data with meandering triangles.",
   "keywords": [
     "contours",

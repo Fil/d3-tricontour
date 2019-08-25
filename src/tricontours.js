@@ -13,7 +13,7 @@ export default function() {
       const { points } = triangulation;
       const A = [points[2 * i], points[2 * i + 1]],
         B = [points[2 * j], points[2 * j + 1]];
-      return [a * A[0] + (1 - a) * B[0], a * A[1] + (1 - a) * B[1]];
+      return [a * B[0] + (1 - a) * A[0], a * B[1] + (1 - a) * A[1]];
     };
 
   let thresholds, values, triangulation;
