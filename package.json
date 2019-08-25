@@ -1,0 +1,45 @@
+{
+  "name": "tricontours",
+  "version": "0.0.1",
+  "description": "Create contours from non-gridded data with meandering triangles.",
+  "keywords": [
+    "contours",
+    "triangulation"
+  ],
+  "homepage": "https://github.com/Fil/tricontours",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Philippe Rivière",
+    "url": "https://github.com/Fil"
+  },
+  "main": "dist/tricontours.js",
+  "unpkg": "dist/tricontours.min.js",
+  "module": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fil/tricontours.git"
+  },
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
+  "scripts": {
+    "test": "tape -r esm 'test/**/*-test.js' && eslint src",
+    "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
+    "postpublish": "git push && git push --tags && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
+  },
+  "dependencies": {
+    "d3-interpolate": "1",
+    "d3-scale": "1",
+    "d3-array": "2",
+    "d3-delaunay": "5"
+  },
+  "devDependencies": {
+    "eslint": "6",
+    "esm": "3",
+    "rollup": "1",
+    "rollup-plugin-terser": "5",
+    "tape": "4",
+    "tape-await": "0.1"
+  }
+}
