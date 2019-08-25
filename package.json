@@ -1,6 +1,6 @@
 {
   "name": "tricontours",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create contours from non-gridded data with meandering triangles.",
   "keywords": [
     "contours",
@@ -31,7 +31,6 @@
   "dependencies": {
     "d3-array": "2",
     "d3-delaunay": "5",
-    "d3-interpolate": "1",
     "d3-scale": "1"
   },
   "devDependencies": {
