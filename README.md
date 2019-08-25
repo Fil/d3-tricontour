@@ -4,6 +4,8 @@ This library computes contour polygons by applying meandering triangles to an ar
 
 For examples, see the [contours collection](https://observablehq.com/collection/@fil/contours) on Observable.
 
+[![flower](https://gist.githubusercontent.com/Fil/3eb6ad8e16a83a65c1e86ec8d02e8ed9/raw/a5b25440875f9b2f8d60193c9bd59348ea838571/thumbnail.png)](https://blockbuilder.org/Fil/3eb6ad8e16a83a65c1e86ec8d02e8ed9)
+
 ## Installing
 
 If you use NPM, `npm install tricontours`. Otherwise, download the [latest release](https://github.com/Fil/tricontours/releases/latest). You can also load directly as a [standalone library](https://cdn.jsdelivr.net/npm/tricontours). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `tricontours` global is exported:
