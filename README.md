@@ -9,10 +9,13 @@ For examples, see the [contours collection](https://observablehq.com/collection/
 If you use NPM, `npm install tricontours`. Otherwise, download the [latest release](https://github.com/Fil/tricontours/releases/latest). You can also load directly as a [standalone library](https://cdn.jsdelivr.net/npm/tricontours). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `tricontours` global is exported:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/tricontours@0"></script>
+<script src="https://unpkg.com/d3-array@2"></script>
+<script src="https://unpkg.com/d3-scale@3"></script>
+<script src="https://unpkg.com/d3-delaunay@5"></script>
+<script src="https://unpkg.com/tricontours@0.0.3"></script>
 <script>
 
-const tri = tricontours();
+const tri = tricontours.tricontours();
 const contours = tri([[0, 0, 1], [1, 1, 0], [2, 0, 1]]);
 
 </script>

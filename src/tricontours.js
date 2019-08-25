@@ -1,5 +1,4 @@
 import {Delaunay} from "d3-delaunay";
-import {interpolate} from "d3-interpolate";
 import {scaleLinear} from "d3-scale";
 import {extent, merge} from "d3-array";
 import ringsort from "./ringsort.js";
@@ -14,7 +13,7 @@ export default function() {
       const { points } = triangulation;
       const A = [points[2 * i], points[2 * i + 1]],
         B = [points[2 * j], points[2 * j + 1]];
-      return interpolate(A, B)(a);
+      return [a * A[0] + (1 - a) * B[0], a * A[1] + (1 - a) * B[1]];
     };
 
   let thresholds, values, triangulation;

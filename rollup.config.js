@@ -6,7 +6,7 @@ const config = {
   external: Object.keys(meta.dependencies || {}).filter(key => /^d3-/.test(key)),
   output: {
     file: `dist/${meta.name}.js`,
-    name: "d3",
+    name: "tricontours",
     format: "umd",
     indent: false,
     extend: true,
