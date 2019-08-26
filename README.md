@@ -41,41 +41,41 @@ Returns an array of contours, one for each threshold. The contours are MultiPoly
 
 The _data_ is passed as an array of points, by default with the format [x,y,value].
 
-<a href="#contour" name="contour">#</a> _tricontours_.contour(_data_[, _value_])
+<a href="#contour" name="contour">#</a> _tricontours_.<b>contour</b>(_data_[, _value_])
 
 Returns a contour, as a MultiPolygon in GeoJSON format, containing all points with a value larger or equal to _value_. The value is indicated as _geometry_.value 
 
-<a href="#contours" name="contours">#</a> _tricontours_.contours(_data_)
+<a href="#contours" name="contours">#</a> _tricontours_.<b>contours</b>(_data_)
 
 Returns an iterable over the contours.
 
-<a href="#isobands" name="isobands">#</a> _tricontours_.isobands(_data_)
+<a href="#isobands" name="isobands">#</a> _tricontours_.<b>isobands</b>(_data_)
 
 Returns an iterable over the isobands (contours between pairs of consecutive threshold values). _geometry_.value is equal to [value0, value1].
 
-<a href="#x" name="x">#</a> _tricontours_.x([_x_])
+<a href="#x" name="x">#</a> _tricontours_.<b>x</b>([_x_])
 
 Sets the *x* accessor. Defaults to \`d => d[0]\`. If _x_ is not given, returns the current x accessor.
 
-<a href="#y" name="y">#</a> _tricontours_.y([_y_])
+<a href="#y" name="y">#</a> _tricontours_.<b>y</b>([_y_])
 
 Sets the *y* accessor. Defaults to \`d => d[1]\`. If _y_ is not given, returns the current y accessor.
 
-<a href="#value" name="value">#</a>  _tricontours_.value([_value_])
+<a href="#value" name="value">#</a>  _tricontours_.<b>value</b>([_value_])
 
 Sets the *value* accessor. Defaults to \`d => d[2]\`. Values must be defined and finite. If _value_ is not given, returns the current value accessor.
 
-<a href="#thresholds" name="thresholds">#</a>  _tricontours_.thresholds([_thresholds_])
+<a href="#thresholds" name="thresholds">#</a>  _tricontours_.<b>thresholds</b>([_thresholds_])
 
 Sets the thresholds, either explicitly as an array of values, or as a count that will be passed to d3.ticks. If empty, returns the current thresholds.
 
 
 _The following are still experimental_
 
-<a href="#triangulate" name="triangulate">#</a>  _tricontours_.triangulate([_triangulate_])
+<a href="#triangulate" name="triangulate">#</a>  _tricontours_.<b>triangulate</b>([_triangulate_])
 
 Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [UK tricontours](https://observablehq.com/d/b8bf49a3048a6f3d) for a detailed example.
 
-<a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontours_.pointInterpolate(_[pointInterpolate]_)
+<a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontours_.<b>pointInterpolate</b>(_[pointInterpolate]_)
 
 Sets the *pointInterpolate* function. Arguments: *i*, *j*, *0≤a<1*. Defaults to linear interpolation between the coordinates of points *i* and *j*. See [Spherical tricontours](https://observablehq.com/d/fa704c04f1a3de6a) for a detailed example.
