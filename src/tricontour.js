@@ -1,6 +1,7 @@
 import {Delaunay} from "d3-delaunay";
 import {scaleLinear} from "d3-scale";
-import {extent, merge} from "./array.js";
+import extent from "./extent.js";
+import merge from "./merge.js";
 import ringsort from "./ringsort.js";
 
 export default function() {

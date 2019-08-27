@@ -1,1 +1,1 @@
-export {default as tricontours} from "./tricontours.js";
+export {default as tricontour} from "./tricontour.js";
