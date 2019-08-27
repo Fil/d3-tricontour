@@ -1,6 +1,6 @@
 {
   "name": "d3-tricontour",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Create contours from non-gridded data with meandering triangles.",
   "keywords": [
     "contours",
@@ -29,8 +29,8 @@
     "postpublish": "git push && git push --tags && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
   },
   "dependencies": {
-    "d3-scale": "1",
-    "d3-delaunay": "5"
+    "d3-delaunay": "5",
+    "d3-scale": "1"
   },
   "devDependencies": {
     "eslint": "6",
