@@ -27,7 +27,7 @@ const contours = tric([[0, 0, 1], [1, 1, 0], [2, 0, 1]]);
 
 The API of tricontour is similar to that of [d3-contour](https://github.com/d3/d3-contour):
 
-<a href="#tricontour" name="tricontour">#</a> <b>d3.tricontour</b>() · [Source](https://github.com/Fil/tricontours/blob/master/src/tricontours.js), [Examples](https://observablehq.com/collection/@fil/tricontours)
+<a href="#tricontour" name="tricontour">#</a> <b>d3.tricontour</b>() · [Source](https://github.com/Fil/d3-tricontour/blob/master/src/tricontour.js), [Examples](https://observablehq.com/collection/@fil/tricontours)
 
 Constructs a new tricontour generator with the default settings.
 
