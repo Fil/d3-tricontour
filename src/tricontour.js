@@ -2,7 +2,7 @@ import {Delaunay} from "d3-delaunay";
 import {scaleLinear} from "d3-scale";
 import extent from "./extent.js";
 import merge from "./merge.js";
-import ringsort from "./ringsort.js";
+import planarRingsort from "./ringsort.js";
 
 export default function() {
   // accessors
@@ -15,7 +15,8 @@ export default function() {
       const A = [points[2 * i], points[2 * i + 1]],
         B = [points[2 * j], points[2 * j + 1]];
       return [a * B[0] + (1 - a) * A[0], a * B[1] + (1 - a) * A[1]];
-    };
+    },
+    ringsort = planarRingsort;
 
   let thresholds, values, triangulation;
 
@@ -85,6 +86,8 @@ export default function() {
   contours.triangulate = _ => (_ ? ((triangulate = _), contours) : triangulate);
   contours.pointInterpolate = _ =>
     _ ? ((pointInterpolate = _), contours) : pointInterpolate;
+  contours.ringsort = _ =>
+    _ ? ((ringsort = _), contours) : ringsort;
   contours.contours = tricontours;
   contours.contour = contour;
   contours.isobands = isobands;

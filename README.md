@@ -58,7 +58,7 @@ Sets the *x* accessor. Defaults to \`d => d[0]\`. If _x_ is not given, returns t
 
 Sets the *y* accessor. Defaults to \`d => d[1]\`. If _y_ is not given, returns the current y accessor.
 
-<a href="#value" name="value">#</a>  _tricontour_.<b>value</b>([_value_])
+<a href="#value" name="value">#</a> _tricontour_.<b>value</b>([_value_])
 
 Sets the *value* accessor. Defaults to \`d => d[2]\`. Values must be defined and finite. If _value_ is not given, returns the current value accessor.
 
@@ -67,12 +67,16 @@ Sets the *value* accessor. Defaults to \`d => d[2]\`. Values must be defined and
 Sets the thresholds, either explicitly as an array of values, or as a count that will be passed to d3.ticks. If empty, returns the current thresholds.
 
 
-_The following are still experimental_
+_The following are experimental_
 
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
-Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [UK tricontours](https://observablehq.com/d/b8bf49a3048a6f3d) for a detailed example.
+Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [UK tricontours](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
 
 <a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontour_.<b>pointInterpolate</b>(_[pointInterpolate]_)
 
-Sets the *pointInterpolate* function. Arguments: *i*, *j*, *0≤a<1*. Defaults to linear interpolation between the coordinates of points *i* and *j*. See [Spherical tricontour](https://observablehq.com/d/fa704c04f1a3de6a) for a detailed example.
+Sets the *pointInterpolate* function. Arguments: *i*, *j*, *0≤a<1*. Defaults to linear interpolation between the coordinates of points *i* and *j*. See [Spherical tricontour](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
+
+<a href="#ringsort" name="ringsort">#</a> _tricontour_.<b>ringsort</b>(_[ringsort]_)
+
+Sets the *ringsort* function. See [Spherical tricontour](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
