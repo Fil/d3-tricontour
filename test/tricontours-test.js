@@ -32,3 +32,39 @@ tape("tricontour().isobands(data) returns an iterable of GeoJSON MultiPolygon", 
   test.equal(d.length, 10);
   test.deepEqual(d[4].value, [0.4, 0.5]);
 });
+
+tape("tricontour().x() sets the x accessor", test => {
+  const c = tric.tricontour()
+    .x(d => d[2])
+    .contour([[0, 0, 1], [1, 1, 0], [2, 0, 0]], 0.5);
+  test.deepEqual(c.coordinates, [[[[0.5, 0.5], [1, 0], [0.5, 0], [0.5, 0.5]]]]);
+});
+
+tape("tricontour().y() sets the y accessor", test => {
+  const c = tric.tricontour()
+    .y(d => d[2])
+    .contour([[0, 0, 1], [1, 1, 0], [2, 0, 0]], 0.5);
+  test.deepEqual(c.coordinates, [[[[0.5, 0.5], [0, 1], [1, 0.5], [0.5, 0.5]]]]);
+});
+
+tape("tricontour().value() sets the value accessor", test => {
+  const c = tric.tricontour()
+    .value(d => d[0])
+    .contour([[0, 0, 1], [1, 1, 0], [2, 0, 0]], 0.5);
+  test.deepEqual(c.coordinates, [[[[0.5, 0.5], [1, 1], [2, 0], [0.5, 0], [0.5, 0.5]]]]);
+});
+
+tape("tricontour().thresholds([…]) sets the thresholds", test => {
+  const c = tric.tricontour()
+    .thresholds([0, 1])
+    ([[0, 0, 1], [1, 1, 0], [2, 0, 0]]);
+  test.deepEqual(c.map(d => d.value), [0,1]);
+});
+
+tape("tricontour().thresholds(n) sets a number of thresholds", test => {
+  const c = tric.tricontour()
+    .thresholds(4)
+    ([[0, 0, 1], [1, 1, 0], [2, 0, 0]]);
+  test.deepEqual(c.map(d => d.value), [0, 0.2, 0.4, 0.6, 0.8, 1]);
+});
+
