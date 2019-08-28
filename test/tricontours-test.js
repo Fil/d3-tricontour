@@ -30,7 +30,8 @@ tape("tricontour().isobands(data) returns an iterable of GeoJSON MultiPolygon", 
   test.assert(c[Symbol.iterator]);
   const d = [...c];
   test.equal(d.length, 10);
-  test.deepEqual(d[4].value, [0.4, 0.5]);
+  test.equal(d[4].value, 0.4);
+  test.equal(d[4].valueMax, 0.5);
 });
 
 tape("tricontour().x() sets the x accessor", test => {

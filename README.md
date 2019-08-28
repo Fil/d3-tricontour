@@ -48,7 +48,7 @@ Returns an iterable over the contours.
 
 <a href="#isobands" name="isobands">#</a> _tricontour_.<b>isobands</b>(_data_)
 
-Returns an iterable over the isobands (contours between pairs of consecutive threshold values). _geometry_.value is equal to [value0, value1].
+Returns an iterable over the isobands: contours between pairs of consecutive threshold values _v0_ (inclusive) and _v1_ (exclusive). _geometry_.value is equal to _v0_, _geometry_.valueMax to _v1_.
 
 <a href="#x" name="x">#</a> _tricontour_.<b>x</b>([_x_])
 

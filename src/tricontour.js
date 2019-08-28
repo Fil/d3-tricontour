@@ -67,7 +67,8 @@ export default function() {
           coordinates: ringsort(
             p0.concat(p1.map(ring => ring.slice().reverse()))
           ),
-          value: [th0, th]
+          value: th0,
+          valueMax: th
         };
       }
       th0 = th;
