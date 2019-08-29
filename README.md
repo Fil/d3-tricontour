@@ -69,14 +69,16 @@ Sets the thresholds, either explicitly as an array of values, or as a count that
 
 _The following are experimental_
 
+These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi#geo-contour).
+
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
-Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [UK tricontours](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
+Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [Reusing a  tricontour triangulation](https://observablehq.com/d/5d02dbefce7ed009) for a detailed example.
 
 <a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontour_.<b>pointInterpolate</b>(_[pointInterpolate]_)
 
-Sets the *pointInterpolate* function. Arguments: *i*, *j*, *0≤a<1*. Defaults to linear interpolation between the coordinates of points *i* and *j*. See [Spherical tricontour](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
+Sets the *pointInterpolate* function. Arguments: *i*, *j*, *0≤a<1*. Defaults to linear interpolation between the coordinates of points *i* and *j*.
 
 <a href="#ringsort" name="ringsort">#</a> _tricontour_.<b>ringsort</b>(_[ringsort]_)
 
-Sets the *ringsort* function. See [Spherical tricontour](https://observablehq.com/d/3f8a82e4ce822290) for a detailed example.
+Sets the *ringsort* function.

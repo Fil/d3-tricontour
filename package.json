@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "Create contours from non-gridded data with meandering triangles.",
   "keywords": [
+    "d3",
+    "d3-module",
     "contours",
     "triangulation"
   ],
