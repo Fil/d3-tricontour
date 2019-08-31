@@ -1,6 +1,6 @@
 # d3-tricontour
 
-This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead.
+This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead. To compute contours on geographic data, see [d3.geoContour](https://github.com/Fil/d3-geo-voronoi#geo-contour).
 
 For examples, see the [tricontours collection](https://observablehq.com/collection/@fil/tricontours) on Observable.
 
@@ -13,7 +13,7 @@ If you use NPM, `npm install d3-tricontour`. Otherwise, download the [latest rel
 ```html
 <script src="https://unpkg.com/d3-scale@3"></script>
 <script src="https://unpkg.com/d3-delaunay@5"></script>
-<script src="https://unpkg.com/d3-tricontour@0.0.6"></script>
+<script src="https://unpkg.com/d3-tricontour@0.1.0"></script>
 <script>
 
 const tric = d3.tricontour();
@@ -32,11 +32,11 @@ The API of tricontour is similar to that of [d3-contour](https://github.com/d3/d
 Constructs a new tricontour generator with the default settings.
 
 
-<a href="#_tricontour" name="_tricontour">#</a> _tricontour_(_data_)
+<a href="#_tricontour" name="_tricontour">#</a> _tricontour_(_data_) · [Examples](https://observablehq.com/@fil/tricontours)
 
 Returns an array of contours, one for each threshold. The contours are MultiPolygons in GeoJSON format, that contain all the points with a value larger than the threshold. The value is indicated as _geometry_.value.
 
-The _data_ is passed as an array of points, by default with the format [x,y,value].
+The _data_ is passed as an array of points, by default with the format [x, y, value].
 
 <a href="#contour" name="contour">#</a> _tricontour_.<b>contour</b>(_data_[, _threshold_])
 
