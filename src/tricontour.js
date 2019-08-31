@@ -120,8 +120,8 @@ export default function() {
     function alpha(i, j) {
       const u = values[i],
         v = values[j];
-      if ((u - v0) * (v - v0) <= 0 && u - v) {
-        return (v0 - u) / Math.abs(u - v);
+      if (u <= v0 && v >= v0 && u < v) {
+        return (v0 - u) / (v - u);
       }
     }
 
