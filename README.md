@@ -38,9 +38,9 @@ Returns an array of contours, one for each threshold. The contours are MultiPoly
 
 The _data_ is passed as an array of points, by default with the format [x,y,value].
 
-<a href="#contour" name="contour">#</a> _tricontour_.<b>contour</b>(_data_[, _value_])
+<a href="#contour" name="contour">#</a> _tricontour_.<b>contour</b>(_data_[, _threshold_])
 
-Returns a contour, as a MultiPolygon in GeoJSON format, containing all points with a value larger or equal to _value_. The value is indicated as _geometry_.value 
+Returns a contour, as a MultiPolygon in GeoJSON format, containing all points with a value larger or equal to _threshold_. The threshold is indicated as _geometry_.value 
 
 <a href="#contours" name="contours">#</a> _tricontour_.<b>contours</b>(_data_)
 

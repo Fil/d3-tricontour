@@ -69,3 +69,9 @@ tape("tricontour().thresholds(n) sets a number of thresholds", test => {
   test.deepEqual(c.map(d => d.value), [0, 0.2, 0.4, 0.6, 0.8, 1]);
 });
 
+tape("tricontour().thresholds() reads the thresholds", test => {
+  const c = tric.tricontour().thresholds(4);
+  c([[0, 0, 1], [1, 1, 0], [2, 0, 5]]);
+  test.deepEqual(c.thresholds(), [0, 1, 2, 3, 4, 5]);
+});
+

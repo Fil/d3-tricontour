@@ -95,7 +95,6 @@ export default function() {
 
   // expose the internals (useful for debugging, not part of the API)
   contours._values = () => values;
-  contours._thresholds = () => thresholds;
   contours._triangulation = () => triangulation;
 
   return contours;
