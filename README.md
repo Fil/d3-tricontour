@@ -1,6 +1,6 @@
 # d3-tricontour
 
-This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead. To compute contours on geographic data, see [d3.geoContour](https://github.com/Fil/d3-geo-voronoi#geo-contour).
+This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead. To compute contours on geographic data, see [d3.geoContour](https://github.com/Fil/d3-geo-voronoi/blob/master/README.md#contours).
 
 For examples, see the [tricontours collection](https://observablehq.com/collection/@fil/tricontours) on Observable.
 
@@ -69,7 +69,7 @@ Sets the thresholds, either explicitly as an array of values, or as a count that
 
 _The following are experimental_
 
-These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi#geo-contour).
+These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi/blob/master/README.md#contours).
 
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
