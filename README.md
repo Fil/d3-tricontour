@@ -29,7 +29,7 @@ The API of tricontour is similar to that of [d3-contour](https://github.com/d3/d
 
 Constructs a new tricontour generator with the default settings.
 
-[![tricontours](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour.jpg)](https://observablehq.com/@fil/tricontours)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour.jpg" alt="tricontours" width="320">](https://observablehq.com/@fil/tricontours)
 
 
 <a href="#_tricontour" name="_tricontour">#</a> _tricontour_(_data_) · [Examples](https://observablehq.com/@fil/tricontours)
@@ -38,7 +38,7 @@ Returns an array of contours, one for each threshold. The contours are MultiPoly
 
 The _data_ is passed as an array of points, by default with the format [x, y, value].
 
-[![tricontours flower](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-flower.jpg)](https://observablehq.com/@fil/tricontour-flower)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-flower.jpg" alt="tricontours flower" width="320">](https://observablehq.com/@fil/tricontour-flower)
 
 
 
@@ -50,14 +50,14 @@ Returns a contour, as a MultiPolygon in GeoJSON format, containing all points wi
 
 Returns an iterable over the contours.
 
-[![iterable](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-iterator.jpg)](https://observablehq.com/@fil/tricontour-iterator)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-iterator.jpg" alt="iterable" width="320">](https://observablehq.com/@fil/tricontour-iterator)
 
 
 <a href="#isobands" name="isobands">#</a> _tricontour_.<b>isobands</b>(_data_)
 
 Returns an iterable over the isobands: contours between pairs of consecutive threshold values _v0_ (inclusive) and _v1_ (exclusive). _geometry_.value is equal to _v0_, _geometry_.valueMax to _v1_.
 
-[![isobands](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-isobands.jpg)](https://observablehq.com/@fil/tricontour-isobands)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-isobands.jpg" alt="isobands" width="320">](https://observablehq.com/@fil/tricontour-isobands)
 
 
 <a href="#x" name="x">#</a> _tricontour_.<b>x</b>([_x_])
@@ -72,7 +72,7 @@ Sets the *y* accessor. Defaults to \`d => d[1]\`. If _y_ is not given, returns t
 
 Sets the *value* accessor. Defaults to \`d => d[2]\`. Values must be defined and finite. If _value_ is not given, returns the current value accessor.
 
-[![hexbin heatmap](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-hexbin.jpg)](https://observablehq.com/@fil/d3-hexbin-tricontours-heatmap)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-hexbin.jpg" alt="hexbin heatmap" width="320">](https://observablehq.com/@fil/d3-hexbin-tricontours-heatmap)
 
 
 <a href="#thresholds" name="thresholds">#</a>  _tricontour_.<b>thresholds</b>([_thresholds_])
@@ -84,14 +84,14 @@ _The following are experimental_
 
 These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi/blob/master/README.md#contours).
 
-[![geoContour](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/geocontour.jpg)](https://observablehq.com/@fil/spherical-contours)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/geocontour.jpg" alt="geoContour" width="320">](https://observablehq.com/@fil/spherical-contours)
 
 
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
 Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [Reusing a  tricontour triangulation](https://observablehq.com/@fil/reusing-a-tricontour-triangulation) and [UK tricontour](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation) for detailed examples.
 
-[![UK tricontour](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-triangulation.jpg)](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-triangulation.jpg" alt="UK tricontour" width="320">](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
 
 
 <a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontour_.<b>pointInterpolate</b>(_[pointInterpolate]_)
