@@ -38,6 +38,10 @@ Returns an array of contours, one for each threshold. The contours are MultiPoly
 
 The _data_ is passed as an array of points, by default with the format [x, y, value].
 
+[![tricontours flower](https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-flower.jpg)](https://observablehq.com/@fil/tricontour-flower)
+
+
+
 <a href="#contour" name="contour">#</a> _tricontour_.<b>contour</b>(_data_[, _threshold_])
 
 Returns a contour, as a MultiPolygon in GeoJSON format, containing all points with a value larger or equal to _threshold_. The threshold is indicated as _geometry_.value 
