@@ -25,6 +25,7 @@
     "dist/**/*.js",
     "src/**/*.js"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@Fil" },
   "scripts": {
     "test": "tape -r esm 'test/**/*-test.js' && eslint src",
     "prepublishOnly": "rm -rf dist && yarn test && rollup -c",
