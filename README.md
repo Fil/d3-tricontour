@@ -10,7 +10,7 @@ If you use npm, `npm install d3-tricontour`. You can also download the [latest r
 
 ```html
 <script type="module">
-import {geoDelaunay} from "https://cdn.skypack.dev/d3-tricontour@1";
+import {tricontour} from "https://cdn.skypack.dev/d3-tricontour@1";
 </script>
 ```
 
