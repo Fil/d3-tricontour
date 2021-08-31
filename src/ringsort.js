@@ -4,8 +4,8 @@ import contains from "./contains.js";
 import area from "./area.js";
 
 export default function(rings) {
-  const polygons = [],
-    holes = [];
+  const polygons = [];
+  const holes = [];
 
   for (const ring of rings) {
     if (area(ring) > 0) polygons.push([ring]);
@@ -13,7 +13,7 @@ export default function(rings) {
   }
 
   holes.forEach(function(hole) {
-    for (var i = 0, n = polygons.length, polygon; i < n; ++i) {
+    for (let i = 0, n = polygons.length, polygon; i < n; ++i) {
       if (contains((polygon = polygons[i])[0], hole) !== -1) {
         polygon.push(hole);
         return;

@@ -1,17 +1,25 @@
 # d3-tricontour
 
-This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead. To compute contours on geographic data, see [d3.geoContour](https://github.com/Fil/d3-geo-voronoi/blob/master/README.md#contours).
+This library computes contour polygons by applying [meandering triangles](https://blog.bruce-hill.com/meandering-triangles) to an array of points with arbitrary 2D coordinates (_x_, _y_) holding numeric values _z_. To compute contours on gridded coordinates, see [d3-contour](https://github.com/d3/d3-contour) instead. To compute contours on geographic data, see [d3.geoContour](https://github.com/Fil/d3-geo-voronoi/blob/main/README.md#contours).
 
 For examples, see the [tricontours collection](https://observablehq.com/collection/@fil/tricontours) on Observable.
 
 ## Installing
 
-If you use NPM, `npm install d3-tricontour`. Otherwise, download the [latest release](https://github.com/Fil/d3-tricontour/releases/latest). You can also load directly as a [standalone library](https://cdn.jsdelivr.net/npm/d3-tricontour). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use npm, `npm install d3-tricontour`. You can also download the [latest release on GitHub](https://github.com/d3/d3-tricontour/releases/latest). For vanilla HTML in modern browsers, import d3-tricontour from Skypack:
 
 ```html
-<script src="https://unpkg.com/d3-scale@3"></script>
-<script src="https://unpkg.com/d3-delaunay@5"></script>
-<script src="https://unpkg.com/d3-tricontour@0.1.0"></script>
+<script type="module">
+import {geoDelaunay} from "https://cdn.skypack.dev/d3-tricontour@1";
+</script>
+```
+
+For legacy environments, you can load d3-tricontour’s UMD bundle from an npm-based CDN such as jsDelivr; a `d3` global is exported:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-tricontour@1"></script>
 <script>
 
 const tric = d3.tricontour();
@@ -25,11 +33,11 @@ const contours = tric([[0, 0, 1], [1, 1, 0], [2, 0, 1]]);
 
 The API of tricontour is similar to that of [d3-contour](https://github.com/d3/d3-contour):
 
-<a href="#tricontour" name="tricontour">#</a> <b>d3.tricontour</b>() · [Source](https://github.com/Fil/d3-tricontour/blob/master/src/tricontour.js), [Examples](https://observablehq.com/collection/@fil/tricontours)
+<a href="#tricontour" name="tricontour">#</a> <b>d3.tricontour</b>() · [Source](https://github.com/Fil/d3-tricontour/blob/main/src/tricontour.js), [Examples](https://observablehq.com/collection/@fil/tricontours)
 
 Constructs a new tricontour generator with the default settings.
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour.jpg" alt="tricontours" width="320">](https://observablehq.com/@fil/tricontours)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour.jpg" alt="tricontours" width="320">](https://observablehq.com/@fil/tricontours)
 
 
 <a href="#_tricontour" name="_tricontour">#</a> _tricontour_(_data_) · [Examples](https://observablehq.com/@fil/tricontours)
@@ -38,7 +46,7 @@ Returns an array of contours, one for each threshold. The contours are MultiPoly
 
 The _data_ is passed as an array of points, by default with the format [x, y, value].
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-flower.jpg" alt="tricontours flower" width="320">](https://observablehq.com/@fil/tricontour-flower)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-flower.jpg" alt="tricontours flower" width="320">](https://observablehq.com/@fil/tricontour-flower)
 
 
 
@@ -50,14 +58,14 @@ Returns a contour, as a MultiPolygon in GeoJSON format, containing all points wi
 
 Returns an iterable over the contours.
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-iterator.jpg" alt="iterable" width="320">](https://observablehq.com/@fil/tricontour-iterator)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-iterator.jpg" alt="iterable" width="320">](https://observablehq.com/@fil/tricontour-iterator)
 
 
 <a href="#isobands" name="isobands">#</a> _tricontour_.<b>isobands</b>(_data_)
 
 Returns an iterable over the isobands: contours between pairs of consecutive threshold values _v0_ (inclusive) and _v1_ (exclusive). _geometry_.value is equal to _v0_, _geometry_.valueMax to _v1_.
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-isobands.jpg" alt="isobands" width="320">](https://observablehq.com/@fil/tricontour-isobands)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-isobands.jpg" alt="isobands" width="320">](https://observablehq.com/@fil/tricontour-isobands)
 
 
 <a href="#x" name="x">#</a> _tricontour_.<b>x</b>([_x_])
@@ -72,7 +80,7 @@ Sets the *y* accessor. Defaults to \`d => d[1]\`. If _y_ is not given, returns t
 
 Sets the *value* accessor. Defaults to \`d => d[2]\`. Values must be defined and finite. If _value_ is not given, returns the current value accessor.
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-hexbin.jpg" alt="hexbin heatmap" width="320">](https://observablehq.com/@fil/d3-hexbin-tricontours-heatmap)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-hexbin.jpg" alt="hexbin heatmap" width="320">](https://observablehq.com/@fil/d3-hexbin-tricontours-heatmap)
 
 
 <a href="#thresholds" name="thresholds">#</a>  _tricontour_.<b>thresholds</b>([_thresholds_])
@@ -82,16 +90,16 @@ Sets the thresholds, either explicitly as an array of values, or as a count that
 
 _The following are experimental_
 
-These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi/blob/master/README.md#contours).
+These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil/d3-geo-voronoi/blob/main/README.md#contours).
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/geocontour.jpg" alt="geoContour" width="320">](https://observablehq.com/@fil/spherical-contours)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/geocontour.jpg" alt="geoContour" width="320">](https://observablehq.com/@fil/spherical-contours)
 
 
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
 Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [Reusing a  tricontour triangulation](https://observablehq.com/@fil/reusing-a-tricontour-triangulation) and [UK tricontour](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation) for detailed examples.
 
-[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/master/img/tricontour-triangulation.jpg" alt="UK tricontour" width="320">](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
+[<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-triangulation.jpg" alt="UK tricontour" width="320">](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
 
 
 <a href="#pointInterpolate" name="pointInterpolate">#</a> _tricontour_.<b>pointInterpolate</b>(_[pointInterpolate]_)
