@@ -1,6 +1,6 @@
 {
   "name": "d3-tricontour",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create contours from non-gridded data with meandering triangles.",
   "homepage": "https://github.com/Fil/d3-tricontour",
   "repository": {
