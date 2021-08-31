@@ -1,14 +1,18 @@
 // https://github.com/d3/d3-contour/blob/master/src/contains.js
 export default function(ring, hole) {
-  var i = -1, n = hole.length, c;
-  while (++i < n) if (c = ringContains(ring, hole[i])) return c;
+  const n = hole.length;
+  let i = -1;
+  while (++i < n) {
+    const c = ringContains(ring, hole[i]);
+    if (c) return c;
+  }
   return 0;
 }
 
 function ringContains(ring, point) {
-  var x = point[0], y = point[1], contains = -1;
-  for (var i = 0, n = ring.length, j = n - 1; i < n; j = i++) {
-    var pi = ring[i], xi = pi[0], yi = pi[1], pj = ring[j], xj = pj[0], yj = pj[1];
+  let x = point[0], y = point[1], contains = -1;
+  for (let i = 0, n = ring.length, j = n - 1; i < n; j = i++) {
+    const pi = ring[i], xi = pi[0], yi = pi[1], pj = ring[j], xj = pj[0], yj = pj[1];
     if (segmentContains(pi, pj, point)) return 0;
     if (((yi > y) !== (yj > y)) && ((x < (xj - xi) * (y - yi) / (yj - yi) + xi))) contains = -contains;
   }
@@ -16,7 +20,7 @@ function ringContains(ring, point) {
 }
 
 function segmentContains(a, b, c) {
-  var i; return collinear(a, b, c) && within(a[i = +(a[0] === b[0])], c[i], b[i]);
+  let i; return collinear(a, b, c) && within(a[i = +(a[0] === b[0])], c[i], b[i]);
 }
 
 function collinear(a, b, c) {
