@@ -111,8 +111,10 @@ export default function() {
     // sanity check
     for (const d of values) if (!isFinite(d)) throw ["Invalid value", d];
 
-    const { halfedges, hull, inedges, triangles } = triangulation,
+    const { halfedges, hull: hull_or_hulls, inedges, triangles } = triangulation,
       n = values.length;
+
+    const hulls = Array.isArray(hull_or_hulls[0]) ? hull_or_hulls : [hull_or_hulls];
 
     function edgealpha(i) {
       return alpha(triangles[i], triangles[next(i)]);
@@ -163,7 +165,15 @@ export default function() {
 
         // or follow the hull
         else {
-          let h = (hull.indexOf(triangles[i]) + 1) % hull.length;
+          let idx, hull;
+          for (hull of hulls) {
+            idx = hull.indexOf(triangles[i]);
+            if (idx >= 0) {
+              // `triangles[i]` is on the hull
+              break;
+            }
+          }
+          let h = (idx + 1) % hull.length;
 
           while (values[hull[h]] < v0) {
             // debugger;
@@ -195,12 +205,14 @@ export default function() {
     }
 
     // special case all values on the hull are >=v0, add the hull
-    if (hull.every(d => values[d] >= v0)) {
-      rings.unshift(
-        Array.from(hull)
-          .concat([hull[0]])
-          .map(i => pointInterpolate(i, i, 0))
-      );
+    for (const hull of hulls) {
+      if (hull.every(d => values[d] >= v0)) {
+        rings.unshift(
+          Array.from(hull)
+            .concat([hull[0]])
+            .map(i => pointInterpolate(i, i, 0))
+        );
+      }
     }
 
     return ringsort(rings); // return [rings] if we don't need to sort
