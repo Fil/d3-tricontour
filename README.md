@@ -99,6 +99,10 @@ These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil
 
 Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [Reusing a  tricontour triangulation](https://observablehq.com/@fil/reusing-a-tricontour-triangulation) and [UK tricontour](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation) for detailed examples.
 
+The *triangulate* function should create an object which is compatible with d3.Delaunay, i.e. it must have `points`, `halfedges`, `hull` and `triangles`.
+However, in order to support hulls made up of multiple connected components, `hull` does not have to be an `Int32Array` but can be an `Array` of `Int32Array` (one per connected component of the hull).
+This allows to handle the case where the domain is made up of multiple pieces and/or has holes.
+
 [<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-triangulation.jpg" alt="UK tricontour" width="320">](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
 
 
