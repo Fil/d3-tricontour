@@ -111,8 +111,14 @@ export default function() {
     // sanity check
     for (const d of values) if (!isFinite(d)) throw ["Invalid value", d];
 
-    const { halfedges, hull, inedges, triangles } = triangulation,
+    const { halfedges, inedges, triangles } = triangulation,
       n = values.length;
+
+    const Hull = new Map();
+    halfedges.forEach((i, j) => {
+      if (i === -1)
+        Hull.set(triangles[j], triangles[j + (j % 3 === 2 ? -2 : 1)]);
+    });
 
     function edgealpha(i) {
       return alpha(triangles[i], triangles[next(i)]);
@@ -140,7 +146,7 @@ export default function() {
 
         // is our tour done?
         if (
-          (path.length && (ti === path[0].ti && tj === path[0].tj)) ||
+          (path.length && ti === path[0].ti && tj === path[0].tj) ||
           path.length > 2 * n
         )
           break;
@@ -163,25 +169,16 @@ export default function() {
 
         // or follow the hull
         else {
-          let h = (hull.indexOf(triangles[i]) + 1) % hull.length;
-
-          while (values[hull[h]] < v0) {
-            // debugger;
-            h = (h + 1) % hull.length;
-          }
-
-          while (values[hull[h]] >= v0) {
-            path.push({ ti: hull[h], tj: hull[h], a: 0 });
-            h = (h + 1) % hull.length;
+          let h = triangles[i];
+          while (values[h] < v0) h = Hull.get(h);
+          while (values[h] >= v0) {
+            path.push({ ti: h, tj: h, a: 0 });
+            h = Hull.get(h);
           }
 
           // take that entry
-          j = inedges[hull[h]];
-          path.push({
-            ti: hull[h],
-            tj: triangles[j],
-            a: alpha(hull[h], triangles[j])
-          });
+          j = inedges[h];
+          path.push({ ti: h, tj: triangles[j], a: alpha(h, triangles[j]) });
 
           if (edgealpha((i = next(j))) > 0) continue;
           if (edgealpha((i = prev(j))) > 0) continue;
@@ -194,14 +191,22 @@ export default function() {
       }
     }
 
-    // special case all values on the hull are >=v0, add the hull
-    if (hull.every(d => values[d] >= v0)) {
-      rings.unshift(
-        Array.from(hull)
-          .concat([hull[0]])
-          .map(i => pointInterpolate(i, i, 0))
-      );
-    }
+    // special case all values on the hull are >=v0, add the hull (or hulls if
+    // there are multiple pieces or holes). Note: vacates the Hull Map.
+    do {
+      const ring = [];
+      let i = Hull.keys().next().value;
+      do {
+        const j = Hull.get(i);
+        ring.push(i);
+        Hull.delete(i);
+        i = j;
+      } while (Hull.has(i));
+      if (ring.every((i) => values[i] >= v0)) {
+        ring.push(ring[0]);
+        rings.push(ring.map((i) => pointInterpolate(i, i, 0)));
+      }
+    } while (Hull.size);
 
     return ringsort(rings); // return [rings] if we don't need to sort
   }
