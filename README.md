@@ -97,7 +97,7 @@ These methods are used in d3-geo-voronoi’s [geoContour](https://github.com/Fil
 
 <a href="#triangulate" name="triangulate">#</a>  _tricontour_.<b>triangulate</b>([_triangulate_])
 
-Sets the *triangulate* function. Defaults to d3.Delaunay.from. See [Reusing a  tricontour triangulation](https://observablehq.com/@fil/reusing-a-tricontour-triangulation) and [UK tricontour](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation) for detailed examples.
+Sets the *triangulate* function. Defaults to d3.Delaunay.from. For detailed examples, see [Reusing a tricontour triangulation](https://observablehq.com/@fil/reusing-a-tricontour-triangulation), [UK tricontour](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation), and [Multipolygon tricontour](https://observablehq.com/@fil/multipolygon-tricontour).
 
 [<img src="https://raw.githubusercontent.com/Fil/d3-tricontour/main/img/tricontour-triangulation.jpg" alt="UK tricontour" width="320">](https://observablehq.com/@fil/tricontours-with-a-personalized-triangulation)
 
